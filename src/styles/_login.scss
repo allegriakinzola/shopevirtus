@@ -1,0 +1,127 @@
+.login{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    .form{
+        flex: 1.9;
+        position: relative;
+        .formcontain{
+            height: 60%;
+            width: 40%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            .explain{
+                .barre{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    .one{
+                        background:$color-gris-secondaire ;
+                        width: 40%;
+                        height: 2px;
+                        
+                    }
+                    .middle{
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: $color-gris-secondaire ;
+                    }
+                }
+            }
+            form{
+                margin-top: 20px;
+                .inputcontenaire{
+                    margin-bottom: 10px;
+                    label{
+                        font-size: 15px;
+                        display: block;
+                        margin-bottom: 15px ;
+                    }
+                    .inputgroupe{
+                        display: flex;
+                        align-items: center;
+                        input{
+                            flex-basis: 100%;
+                            padding: 10px;
+                            border: 2px solid $color-gris-secondaire;
+                            border-radius: 5px;
+                            &:focus{
+                                outline: none;
+                                border-color: none;
+                                box-shadow: rgba(255, 255, 255, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                                
+                            }
+                        }
+                        span{
+                            background:$color-red-secondaire;
+                            color: white;
+                            padding: 9px;
+                            border-bottom-right-radius: 5px;
+                            border-top-right-radius: 5px;
+                            transform: translateX(-3px);
+                        }
+                    }
+                }
+                button{
+                    margin-top: 10px;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    background: $color-red-secondaire;
+                    padding: 10px 0 10px 0;
+                    text-align: center;
+                    border-radius: 5px;
+                    color: white;
+                    transition: all 0.2s ease-in-out;
+                    &:hover{
+                        filter: opacity(80%);
+                    }
+                }
+            }
+        }
+    }
+    .presentation{
+        flex : 1.1;
+        background: -webkit-linear-gradient(179deg, #f87268,#f77269,#ffa8a8);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(179deg, #f87268,#f77269,#ffa8a8);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+        border-bottom-left-radius: 70px;
+        position: relative;
+        .contenu{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            img{
+                width: 100px;
+            }
+            p{
+                color: white;
+                margin-top: 30px;
+                padding: 10px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width : 900px) {
+    .login{
+        .presentation{
+            display: none;
+        }
+        .form{
+            .formcontain{
+                height: 80%;
+                width: 80%;
+            }
+        }
+    }
+}

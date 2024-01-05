@@ -1,0 +1,79 @@
+.navtop{
+    background: $color-white-principal;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    .navleft{
+      position: absolute;  
+      top: 50%;
+      transform: translateY(-50%);
+      left: 30px;
+      background: $color-gris-principale;
+      padding: 4px 7px;
+      transform: translateY(-20px);
+      border-radius: 5px;
+      color: $color-black-secondaire;
+      border: 2px solid rgb(201, 199, 199);
+      cursor: pointer;
+      &:hover{
+        filter: brightness(80%);
+      }
+    }
+    .navtopright{
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        .notification{
+            position: relative;
+            cursor: pointer;
+            .notificone{
+                font-size: 23px;
+            }
+            span{
+                position: absolute;
+                top: 0px;
+                transform: translate(-27px,-7px);
+                background: $color-mauve;
+                padding: 1px 4px;
+                border-radius: 50%;
+                color: $color-white-principal;
+                font-size: 10px;
+            }
+        }
+        .name{
+            background: $color-red-principale;
+            padding: 3px 7px;
+            border-radius: 5px;
+            color: $color-white-principal;
+            font-weight: bold;
+            transform: translateY(-4px);
+
+        }
+        .logout{
+            padding: 4px 7px;
+            background: $color-mauve;
+            color: $color-white-principal;
+            border-radius: 5px;
+            transform: translateY(-5px);
+            cursor: pointer;
+            &:hover{
+                filter: brightness(70%);
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width : 900px) {
+    
+}

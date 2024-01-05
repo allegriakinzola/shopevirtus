@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Gloock&family=Hepta+Slab:wght@100;300;400&family=Josefin+Sans:wght@100;200&family=Kumbh+Sans:wght@900&family=Lexend:wght@100;200;400;700&family=Montserrat:wght@100;200;300;400;500&family=Plus+Jakarta+Sans:wght@300;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300&family=Public+Sans:wght@200&family=Rambla:wght@400;700&family=Red+Hat+Display:wght@300&family=Roboto:wght@100;300;400&family=Six+Caps&family=Sora:wght@100;200;300;500;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+$font-1 : 'Red Hat Display', Ubuntu;
+$font-2 : 'Roboto', sans-serif;
+$font-3: 'josephin Sans', serif;
+$font-4:'Public Sans' 'sans-serif';
+$font-5:'Plus Jakarta Sans', sans-serif;
+
+$color-red-principale : #ff0000;
+$color-red-secondaire : #f44336;
+$color-white-principal : #ffffff;
+$color-black-principal : #000000;
+$color-black-secondaire : rgb(58, 53, 53);
+$color-gris-principale : rgb(207, 201, 201);
+$color-gris-secondaire : #d8d5d5;
+$color-gris-tertiare : rgb(236, 229, 229);
+$color-yellow : rgb(228, 209, 37);
+$color-mauve : rgb(80, 49, 255);
+
+
+*, ::after, ::before, :not(img){
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $font-5;
+    border: 0;
+    appearance: 0;
+    outline: 0;
+    text-decoration: none;
+    color: $color-black-secondaire;
+}
+
+a, button{
+    cursor: pointer;
+}
+li{
+    list-style-type: none;
+}
+
+
+
+
+  

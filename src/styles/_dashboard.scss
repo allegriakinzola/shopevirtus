@@ -1,0 +1,74 @@
+.dashboard{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    gap: 20px;
+    background: $color-gris-tertiare;
+    .dashboardcontent{
+       background: $color-gris-tertiare;;
+       width: 80%;
+       height: 80%;
+       .parent{
+        width: 100%;
+        height: 100%;
+        margin-top: 90px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        margin-left: 20px; /* Ajouter une marge à gauche */
+        margin-right: 20px; /* Ajouter une marge à droite */
+    
+        .div1 {
+             grid-area: 1 / 1 / 2 / 6;
+        }
+        .div2 { 
+            grid-area: 2 / 1 / 6 / 4; 
+        }
+        .div3 { 
+            grid-area: 2 / 4 / 6 / 6;
+
+         }
+       }
+    }
+}
+
+
+@media screen and (max-width : 1200px) {
+    .dashboard{
+        .dashboardcontent{
+            width: 80%;
+            margin: 0px auto;
+           
+           
+        }
+    }
+}
+
+@media screen and (max-width : 800px) {
+    .dashboard{
+        height: 2000px;
+        .dashboardcontent{
+            width: 85%;
+            margin: 0px auto;
+            .parent{
+                display: flex;
+                flex-direction: column;
+                margin-left: 0px; /* Ajouter une marge à gauche */
+                margin-right: 0px; /* Ajouter une marge à droite */
+            
+                .div1 {
+                    width: 100%;
+               }
+               .div2 { 
+                    width: 100%;
+               }
+               .div3 { 
+                    width: 100%;
+       
+                }
+            }
+        }
+    }
+}

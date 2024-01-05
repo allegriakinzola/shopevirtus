@@ -1,0 +1,64 @@
+.popup{
+    background: rgb(99, 94, 94, 0.4);
+    width: 100vw;
+    height: 100hv;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    .message{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 100px;
+        background: white;
+        border-radius: 5px;
+        padding-top: 10px;
+        z-index: 2;
+        cursor: pointer;
+        .contenaire{
+            margin:  0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            h5{
+                font-size: 15px;
+            }
+            .confirme{
+                display: flex;
+                gap: 40px;
+                .bouton{
+                    padding: 3px 5px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    color: white;
+                    &:hover{
+                        filter: contrast(50%);
+                    }
+                }
+                .oui{
+                    background-color: rgb(8, 233, 46);
+                }
+                .non{
+                    background-color : rgb(240, 30, 30)
+                }
+            }
+        }
+    }
+}
+.close{
+    transform: translateX(1000%);
+}
+
+@media screen and (max-width : 990px) {
+    .popup{
+     .message{
+        width: 80%;
+     }
+    }
+}
