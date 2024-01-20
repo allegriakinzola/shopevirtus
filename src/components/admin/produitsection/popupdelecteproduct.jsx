@@ -12,8 +12,8 @@ export function Popupdeletproduit ({agree, setAgree, produit}) {
             try {
                 const response = await axios.delete(`https://shopevirtus.000webhostapp.com/produits/delete/${id_produit}`)
                 console.log(response.data)
-                toast.success("produit supprimé avec succès")
             } catch (error) {
+                toast.success("produit supprimé avec succès")
                 console.error(`une erreur s'est produit lors de la suppression du produit ${produit.nom_produit} : ${error}`)
             }
         }

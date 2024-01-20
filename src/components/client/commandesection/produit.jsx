@@ -5,7 +5,6 @@ export function OneProduit({ produitselect }) {
 
   const validcommand = async () => {
     const url = `https://shopevirtus.000webhostapp.com/order/confirm/${produitselect.id_commande}`;
-
     try {
       const response = await fetch(url, {
         method: 'POST'
@@ -14,7 +13,6 @@ export function OneProduit({ produitselect }) {
       if (!response.ok) {
         throw new Error("Une erreur s'est produite lors de la confirmation de la commande");
       }
-
       const data = await response.json();
       console.log(data);
     } catch (error) {
@@ -38,13 +36,19 @@ export function OneProduit({ produitselect }) {
               <div className="descbot">
                 {produitselect.date_vente !== null ? (
                   <>
-                    <p className="desc">date vente: {produitselect.date_commande}</p>
+                    <p className="desc">statut: <span style={{color : "green"}}>validé</span></p>
+                    <p className="desc">date: {produitselect.date_commande}</p>
+                    <p className="desc">date: {produitselect.heure_commande}</p>
                   </>
                 ) : (
-                  <p className="desc">statut: non vendu</p>
+                  <p className="desc">statut: <span style={{color : "red"}}>non validé</span></p>
                 )}
                 <p className="desc">quantité : {produitselect.quantite}</p>
                 <p className="desc">prix total : {produitselect.prix_unitaire * produitselect.quantite} fc</p>
+                <br/>
+                <p>client : </p>
+                <p className="desc">{produitselect.nom_client}</p>
+                <p className="desc">{produitselect.email_client}</p>
               </div>
             </div>
           </div>

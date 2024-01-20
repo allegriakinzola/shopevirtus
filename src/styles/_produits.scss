@@ -27,6 +27,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
         .searche{
             padding-top:10px ;
             margin-left: 10px;
@@ -136,17 +137,19 @@
             margin: 0 auto;
             top: 0;
             display: flex;
-            align-items: center;
             justify-content: space-between;
             flex-direction: column;
+            height: 80px;
+            gap: 8px;
+            align-items: flex-start;
             .searche{
                 padding-top:10px ;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                width: 30%;
+                width: 100%;
+                margin: 0;
                 input{
-                    padding: 5px 7px;
                     background: $color-gris-tertiare;
                     border-radius: 5px;
                    

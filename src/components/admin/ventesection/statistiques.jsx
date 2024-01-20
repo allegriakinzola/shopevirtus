@@ -6,42 +6,33 @@ import { MdDelete } from "react-icons/md";
 import axios from "axios"
 
 export function Statistiques(){
-    const [leght, setLeght] = useState(0)
     const [price, setPrice] = useState(0)
-    const [cathegories, setCathegories] = useState(0)
+    const [numbervente, setNumbervente] = useState(0)
 
     useEffect(() => {
-        async function getLeght (){
+        async function getVentes (){
             try {
-                const  response = await axios.get('https://shopevirtus.000webhostapp.com/produits')
+                const  response = await axios.get('https://shopevirtus.000webhostapp.com/order/all_orders')
                 const data = Object.values(response.data)
-                const leghtlist = data.length
-                getTotalPrice(data)
-                getAllCategoris(data)
-                setLeght(leghtlist)
+                getAllventes(data)
             } catch (error) {
                 console.error(`une erreur est survenue lors de la récupération des données ${error}`)
             }
         }
 
         async function getTotalPrice(datas) {
-            const array = datas.map(product => product.prix);
+            const array = datas.map(product => product.prix_total);
             const pricetotal = array.reduce((acc, valeur) => acc + valeur, 0);
             setPrice(pricetotal);
           }
         
-        async function getAllCategoris (datas){
-            const cathegorie = datas.map(product => product.categorie)
-            let array = []
-            for (let i = 0; i < cathegorie.length; i++) {
-                if (!array.includes(cathegorie[i])) {
-                  array.push(cathegorie[i]);
-                }
-              }
-            setCathegories(array.length)
+        async function getAllventes (datas){
+            const cathegorie = datas.filter(commandes => commandes.statut === 1)
+            getTotalPrice(cathegorie)
+            setNumbervente(cathegorie.length)
         }
 
-        getLeght()
+        getVentes()
     }, [])
 
     return(
@@ -50,8 +41,8 @@ export function Statistiques(){
            <div className="content">
                  <div className="state">
                     <div className="data">
-                        <span>produits</span>
-                        <span className="dataresult">{leght}</span>
+                        <span>Ventes</span>
+                        <span className="dataresult">{numbervente}</span>
                     </div>
                     <div className="graphique one">
                         <span className="carre"></span>
@@ -71,7 +62,7 @@ export function Statistiques(){
                 <div className="state">
                     <div className="data">
                         <span>catégories</span>
-                        <span className="dataresult">{cathegories}</span>
+                        <span className="dataresult">{}</span>
                     </div>
                     <div className="graphique three">
                         <span className="carre"></span>
@@ -79,7 +70,7 @@ export function Statistiques(){
                     </div>
                 </div>
            </div>
-           <h3 className="tittle2">PRODUITS</h3>
+           <h3 className="tittle2">VENTES</h3>
         </div>
     )
 }

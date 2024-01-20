@@ -18,7 +18,6 @@
         }
     }
     .produit{
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 10px;
         display: flex;
         width: 100%;
@@ -103,6 +102,21 @@
             &:hover{
                 filter: opacity(50%);
             }
+        }
+    }
+}
+
+@media screen and (max-width : 900px) {
+    .div3{
+        display: flex;
+        flex-direction: column;
+        .aucun{
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .produit{
+            flex-direction: column;
         }
     }
 }

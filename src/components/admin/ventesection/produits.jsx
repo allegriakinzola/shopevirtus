@@ -13,11 +13,11 @@ function Produit({ produit, onProduitselected }) {
         </div>
         <div className="blocleftcontent">
           <p>{produit.nom_produit}</p>
-          <small>{produit.categorie}</small>
+          <small>{produit.date_vente}</small>
         </div>
       </div>
       <div className="blocright">
-        <p>{produit.prix} fc</p>
+        <p>{produit.prix_total} fc</p>
         <small className="state">{produit.nom_produit}</small>
       </div>
     </div>
@@ -32,9 +32,10 @@ export function Produits({ setProduitselect }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://shopevirtus.000webhostapp.com/produits");
+        const response = await axios.get("https://shopevirtus.000webhostapp.com/order/all_orders");
         const array = Object.values(response.data);
-        setProduits(array);
+        const ventes = array.filter(vente => vente.statut === 1)
+        setProduits(ventes);
       } catch (error) {
         console.error(`Erreur lors de la récupération des données : ${error}`);
       }
@@ -47,55 +48,9 @@ export function Produits({ setProduitselect }) {
     setProduitselect(produit);
   };
 
-  const handlechange = (e) => {
-    const value = e.target.value;
-    setSearchterm(value);
-  };
-
-  const catchange = (e) => {
-    const value = e.target.value;
-    if (value === "all") {
-    setProduitcategorie("");
-  } else {
-    setProduitcategorie(value);
-  }
-  };
-
-  const handleblur = () => {
-    setProduitcategorie(produitcategorie);
-  };
-
-  console.log(produitcategorie);
-
+ 
   return (
     <div className="div2">
-      <div className='top'>
-        <div className="searche">
-          <span><AiOutlineSearch /></span>
-          <input
-            type="text"
-            value={searchterm}
-            onChange={handlechange}
-            name="search"
-            id="search"
-            placeholder="Rechercher un produit"
-          />
-        </div>
-        <div className='cathegorie'>
-          <select
-            id='cathegorie'
-            name='cathegorie'
-            value={produitcategorie}
-            onChange={catchange}
-            onBlur={handleblur}
-          >
-            <option value="all">Toutes les catégories</option>
-            <option value="Sac à dos">Sac à dos</option>
-            <option value="Livre">Livre</option>
-            <option value="Informatique">Informatique</option>
-          </select>
-        </div>
-      </div>
       <div className='content'>
         {produits
           .filter((produit) => {
