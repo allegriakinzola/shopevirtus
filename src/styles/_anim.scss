@@ -1,3 +1,4 @@
+
 .anim{
     background-color: white;
     height: 100vh;
@@ -13,6 +14,7 @@
         left: 50%;
         top: 30%;
         transform: translate(-50%, -50%);
+        display: flex;
         .rond2{
                 height: 160px;
                 width: 160px;
@@ -39,8 +41,10 @@
         .progressbare {
             width: 150px;
             height: 10px;
-            background-color: red;
+            background-color: $color-black-secondaire;
             animation: progress 2s infinite linear;
+            transform: translateY(200px);
+            border-radius: 5px;
           }
           
           @keyframes rotation {

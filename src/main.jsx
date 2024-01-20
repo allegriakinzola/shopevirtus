@@ -8,6 +8,7 @@ import { DashboardAdminVentes } from './components/admin/ventesection/dashboadad
 import { DashboardClientCommandes } from './components/client/commandesection/dashboardclientcommandes.jsx'
 import { Graphique } from './components/admin/produitsection/graphique.jsx'
 import { Anim } from './components/admin/produitsection/anim.jsx'
+import { Graphiquepage } from './components/admin/produitsection/graphiquepage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,6 @@ const router = createBrowserRouter([
     element : <Anim/>
   }
 ])
-
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

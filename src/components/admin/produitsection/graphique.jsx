@@ -12,13 +12,12 @@ const data = [
 
 export function Graphique () {
   return (
-    <div className="row">
+    <div className='grapcontent'>
+      <div className="row">
       <div className="col-md-12">
-        <h2>Charts with recharts library</h2>
+        <h2>Graphique des données</h2>
       </div>
-
       <div className="section col-md-6">
-        <h3 className="section-title">Line Chart</h3>
         <div className="section-content">
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data} margin={{ top: 15, right: 0, bottom: 15, left: 0 }}>
@@ -51,6 +50,7 @@ export function Graphique () {
         </div>
       </div>
 
+    </div>
     </div>
   )
 }

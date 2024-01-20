@@ -16,7 +16,7 @@ export function DashboardAminProduits (){
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowAnim(false);
-        }, 1000);
+        }, 1800);
 
         return () => {
             clearTimeout(timer);

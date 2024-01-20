@@ -1,16 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbare } from "./navbare";
 import { Navtop } from "./navtop";
 import { OneProduit} from "./produit";
 import { Produits } from "./produits";
 import { Statistiques } from "./statistiques";
-import { useLocation } from "react-router-dom";
+import { Anim } from "../../admin/produitsection/anim";
+
 
 export function DashboardClientCommandes (){
     const [produitselect, setProduitselect] = useState(null)
     const [isvisible, setIsvisible] = useState(false)
+    const [showAnim, setShowAnim] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowAnim(false);
+        }, 1800);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, []);
+
 
     return(
+       <>
+       {showAnim && <Anim/>}
         <div className="dashboard">
             <Navbare isvisible={isvisible} setIsvisible={setIsvisible} />
             <div className="dashboardcontent">
@@ -22,5 +37,6 @@ export function DashboardClientCommandes (){
                 </div>
             </div>
         </div>
+       </>
     )
 }
