@@ -3,7 +3,8 @@ import {FiLogOut} from "react-icons/fi";
 import {AiOutlineClose} from "react-icons/ai"
 import { useNavigate } from "react-router-dom";
 
-export function Navtop({isvisible, setIsvisible, name}){
+export function Navtop({isvisible, setIsvisible}){
+    const navigate = useNavigate()
     const togglenavbare = () => {
         setIsvisible(!isvisible)
     }
