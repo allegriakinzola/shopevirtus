@@ -4,6 +4,7 @@ import {AiOutlineClose} from "react-icons/ai"
 import { useNavigate } from "react-router-dom";
 
 export function Navtop({isvisible, setIsvisible, name}){
+    const navigate = useNavigate()
     const togglenavbare = () => {
         setIsvisible(!isvisible)
     }
