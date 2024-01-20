@@ -7,6 +7,7 @@ import { Login } from './pages/login.jsx'
 import { DashboardAdminVentes } from './components/admin/ventesection/dashboadadminventes.jsx'
 import { DashboardClientCommandes } from './components/client/commandesection/dashboardclientcommandes.jsx'
 import { Graphique } from './components/admin/produitsection/graphique.jsx'
+import { Anim } from './components/admin/produitsection/anim.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path : "/graphique",
     element : <Graphique/>
+  },
+  {
+    path : "/anim",
+    element : <Anim/>
   }
 ])
 
