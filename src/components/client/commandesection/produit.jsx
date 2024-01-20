@@ -17,6 +17,7 @@ export function OneProduit({ produitselect }) {
       console.log(data);
     } catch (error) {
       console.error(`une erreur s'est produite lors de la confirmation de la commande; ${error} : ${error.message}`);
+      setError("Une erreur s'est produite lors de la confirmation de la commande");
     }
   };
 
@@ -44,9 +45,9 @@ export function OneProduit({ produitselect }) {
                   <p className="desc">statut: <span style={{color : "red"}}>non validé</span></p>
                 )}
                 <p className="desc">quantité : {produitselect.quantite}</p>
-                <p className="desc">prix total : {produitselect.prix_unitaire * produitselect.quantite} fc</p>
+                <p className="desc">prix total: {produitselect.prix_unitaire * produitselect.quantite} fc</p>
                 <br/>
-                <p>client : </p>
+                <p>client :</p>
                 <p className="desc">{produitselect.nom_client}</p>
                 <p className="desc">{produitselect.email_client}</p>
               </div>
@@ -57,9 +58,11 @@ export function OneProduit({ produitselect }) {
             <p>Aucun produit sélectionné</p>
           </div>
         )}
-        <div className="bouton">
-          <button className="add" onClick={validcommand}>Valider la commande</button>
-        </div>
+        {produitselect && (
+          <div className="bouton">
+            <button className="add" onClick={validcommand}>Valider la commande</button>
+          </div>
+        )}
       </div>
 
       {error && (
