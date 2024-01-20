@@ -34,7 +34,7 @@ export function Navbare ({isvisible, setIsvisible}){
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink style={({isActive})=>{return {background: isActive ? ' ': ''}}} to="/dashboardadmin/" >
+                        <NavLink style={({isActive})=>{return {background: isActive ? ' ': ''}}} to="/graphique" >
                             <div className="lien">
                                 <span className="linkicone"><MdDataSaverOff className="icone"/></span>
                                 <span>Données</span>
