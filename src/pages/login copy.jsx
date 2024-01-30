@@ -22,6 +22,7 @@ export function Login (){
                 redircet(response.data)
            }else if (response.data === "usernotexist"){
                 setErrorLogin("identifiant ou mot de passe incorrect")
+                
            }
         } catch (error) {
             console.error(`une erreur s'est produite lors de l'envoie de la requette : ${error.message}: ${error.response}`)   
