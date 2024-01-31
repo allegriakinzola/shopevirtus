@@ -17,7 +17,7 @@ function UserForm() {
     e.preventDefault();
 
     // Envoyer les données à l'API
-    fetch('http://localhost:3000/postuser', {
+    fetch('http://localhost:8000/postuser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
