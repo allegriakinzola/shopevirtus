@@ -14,7 +14,7 @@ export function Login (){
     const handleSubmit = async (e) =>{
         e.preventDefault()
         try {
-           const response = await axios.post("http://localhost:8000/login", {
+           const response = await axios.post("https://shop-evirtus.onrender.com/login", {
                 email : email,
                 password : password
             })
@@ -30,7 +30,7 @@ export function Login (){
     } 
 
     function redircet (user){
-        if(user.statut === "admin"){
+        if(user.status === "admin"){
             navigate('/dashboardadminproduits', {state : {id : user.name}}) 
         }else{
             navigate('/dashboardclientcommandes', {state : {id : user.name}}) 

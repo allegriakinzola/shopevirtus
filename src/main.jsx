@@ -9,6 +9,7 @@ import { DashboardClientCommandes } from './components/client/commandesection/da
 import { Graphique } from './components/admin/produitsection/graphique.jsx'
 import { Anim } from './components/admin/produitsection/anim.jsx'
 import { Graphiquepage } from './components/admin/produitsection/graphiquepage.jsx'
+import UserForm from './pages/post.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path : "/anim",
     element : <Anim/>
+  },
+  {
+    path : "/post",
+    element : <UserForm/>
   }
 ])
 
